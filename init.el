@@ -1,4 +1,7 @@
+;; TODO: better loading of cask.el
 (require 'cask "c:/Users/Craig/.cask/cask.el")
+(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
+
 (cask-initialize)
 
 (require 'package)
@@ -27,13 +30,12 @@ There are two things you can do about this warning:
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (setq jedi:environment-root "jedi")
 (setq jedi:environment-virtualenv (list "python3" "-mvenv"))
-	  
-;(load "go-fast")
 
 (require 'auto-org-md)
 (auto-org-md-mode)
 
 ;; go
+(load "go-fast")
 (require 'go-fast)
 (add-hook 'go-mode-hook
 	  (lambda ()
@@ -46,11 +48,10 @@ There are two things you can do about this warning:
 ;		  (lambda ()
 ;			(local-set-key (kbd"C-c t") 'insert-timesheet)))
 
-(setq pianobar-username "")
+(setq pianobar-username "niles.c@gmail.com")
 (setq pianobar-password "")
 (setq pianobar-station "0")
 (setq pianobar-program-command "/usr/local/bin/pianobar")
-
 (autoload 'pianobar "pianobar" nil t)
 
 (custom-set-variables

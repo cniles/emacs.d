@@ -29,7 +29,7 @@
 (depends-on "csproj-mode")
 (depends-on "powershell")
 
+(depends-on "arduino-mode")
+
 (depends-on "js2-mode")
 (depends-on "npm-mode")
-
-(depends-on "arduino-mode")
