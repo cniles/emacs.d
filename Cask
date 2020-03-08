@@ -1,4 +1,5 @@
 (source melpa)
+(source gnu)
 (depends-on "vue-html-mode")
 (depends-on "python-black")
 (depends-on "jedi")
@@ -25,6 +26,9 @@
 (depends-on "groovy-mode")
 (depends-on "flycheck")
 (depends-on "csproj-mode")
+(depends-on "powershell")
 
 (depends-on "js2-mode")
 (depends-on "npm-mode")
+
+(depends-on "arduino-mode")
