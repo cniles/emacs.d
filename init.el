@@ -28,8 +28,7 @@ There are two things you can do about this warning:
 (setq jedi:environment-root "jedi")
 (setq jedi:environment-virtualenv (list "python3" "-mvenv"))
 	  
-(load "go-fast")
-(load "hours")
+;(load "go-fast")
 
 (require 'auto-org-md)
 (auto-org-md-mode)
@@ -41,10 +40,11 @@ There are two things you can do about this warning:
 	    (local-set-key (kbd "C-c r") 'go-run)))
 
 ;; hours
-(require 'hours)
-(add-hook 'org-mode-hook
-		  (lambda ()
-			(local-set-key (kbd"C-c t") 'insert-timesheet)))
+;(load "hours")
+;(require 'hours)
+;(add-hook 'org-mode-hook
+;		  (lambda ()
+;			(local-set-key (kbd"C-c t") 'insert-timesheet)))
 
 (setq pianobar-username "")
 (setq pianobar-password "")
@@ -149,3 +149,8 @@ There are two things you can do about this warning:
 
 ;;(setq visible-bell t)
 (setq ring-bell-function 'ignore)
+
+;; arduino
+(load "arduino-cli")
+(require 'arduino-cli-mode)
+(add-to-list 'auto-minor-mode-alist  '("\\.ino\\'" . arduino-cli-mode))

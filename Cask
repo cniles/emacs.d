@@ -1,5 +1,6 @@
 (source melpa)
 (source gnu)
+(depends-on "auto-minor-mode")
 (depends-on "vue-html-mode")
 (depends-on "python-black")
 (depends-on "jedi")
