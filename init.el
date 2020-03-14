@@ -34,14 +34,14 @@ There are two things you can do about this warning:
 (require 'auto-org-md)
 (auto-org-md-mode)
 
-;; go
-(load "go-fast")
-(require 'go-fast)
-(add-hook 'go-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-c r") 'go-run)))
+;; go - bad go mode I wrote
+;(load "go-fast")
+;(require 'go-fast)
+;(add-hook 'go-mode-hook
+;	  (lambda ()
+;	    (local-set-key (kbd "C-c r") 'go-run)))
 
-;; hours
+;; Just inserts a table in org mode
 ;(load "hours")
 ;(require 'hours)
 ;(add-hook 'org-mode-hook
@@ -68,6 +68,7 @@ There are two things you can do about this warning:
    (quote
     ("fd3b1531faea72f67620800a332e790f9f67b04412ef335c396971fc73bee24b" default)))
  '(fci-rule-color "#00000000e665")
+ '(nxml-slash-auto-complete-flag t)
  '(org-agenda-files
    (quote
     ("~/workspace/refinitiv/notes.org" "~/workspace/omg/notes.org" "~/Documents/org/goals.org")))
@@ -155,3 +156,6 @@ There are two things you can do about this warning:
 (load "arduino-cli")
 (require 'arduino-cli-mode)
 (add-to-list 'auto-minor-mode-alist  '("\\.ino\\'" . arduino-cli-mode))
+
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
