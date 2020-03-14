@@ -33,3 +33,5 @@
 
 (depends-on "js2-mode")
 (depends-on "npm-mode")
+
+(depends-on "exec-path-from-shell")

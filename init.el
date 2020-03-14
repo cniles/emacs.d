@@ -109,19 +109,19 @@ There are two things you can do about this warning:
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (setq-default js2-include-node-externs t)
-(setq-default js2-global-externs '("describe" "it" "afterEach" "beforeEach" "sinon"))
+(setq-default js2-global-externs '("describe" "it" "afterEach" "beforeEach" "sinon" "fetch"))
 
-(setq-default js2-show-parse-errors nil)
-(setq-default js2-strict-missing-semi-warning nil)
-(setq-default js2-strict-trailing-comma-warning t) ;; jshint does not warn about this now for some reason
-
-(add-hook 'js2-mode-hook (lambda () (flycheck-mode 1)))
+(add-hook 'js2-mode-hook (lambda () (flycheck-mode 1)
+			   (setq flycheck-checker 'javascript-eslint)
+			   (setq-default flycheck-disabled-checkers
+					 (append flycheck-disabled-checkers
+						 '(javascript-jshint)))))
 (add-hook 'js2-mode-hook (lambda () (npm-mode)))
 
 
 ;; csharp / omnisharp
 (eval-after-load
-  'company
+    'company
   '(add-to-list 'company-backends #'company-omnisharp))
 
 (defun my-csharp-mode-setup ()
@@ -137,9 +137,9 @@ There are two things you can do about this warning:
   (setq tab-width 4)
   (setq evil-shift-width 4)
 
-  ;csharp-mode README.md recommends this too
-  ;(electric-pair-mode 1)       ;; Emacs 24
-  ;(electric-pair-local-mode 1) ;; Emacs 25
+					;csharp-mode README.md recommends this too
+					;(electric-pair-mode 1)       ;; Emacs 24
+					;(electric-pair-local-mode 1) ;; Emacs 25
 
   (local-set-key (kbd "C-c r r") 'omnisharp-run-code-action-refactoring)
   (local-set-key (kbd "C-c C-c") 'recompile)
