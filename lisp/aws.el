@@ -35,11 +35,12 @@
 		 outfile)))
 	 (out (shell-command-to-string cmd)))
     (with-output-to-temp-buffer "*aws-lambda-invoke*"
-      ;(print "-- Command --")
-      ;(princ cmd)
-      (print "-- Result --")
-      (princ out)
-      (print outfile))))
+      (with-current-buffer "*aws-lambda-invoke*"
+	(json-mode)
+	(insert-file-contents outfile)
+	(json-pretty-print-buffer)
+	(read-only-mode))
+      (princ out t))))
 
 (provide 'aws)
 ;;; aws.el ends here

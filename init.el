@@ -153,9 +153,13 @@ There are two things you can do about this warning:
 (setq ring-bell-function 'ignore)
 
 ;; arduino
-(load "arduino-cli")
-(require 'arduino-cli-mode)
-(add-to-list 'auto-minor-mode-alist  '("\\.ino\\'" . arduino-cli-mode))
+;(load "arduino-cli")
+;(require 'arduino-cli-mode)
+;(add-to-list 'auto-minor-mode-alist  '("\\.ino\\'" . arduino-cli-mode))
+
+;;; aws utilities
+(load "aws")
+(require 'aws)
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
