@@ -118,6 +118,8 @@ There are two things you can do about this warning:
 						 '(javascript-jshint)))))
 (add-hook 'js2-mode-hook (lambda () (npm-mode)))
 
+;; terraform
+(add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 
 ;; csharp / omnisharp
 (eval-after-load
