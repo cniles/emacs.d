@@ -121,6 +121,10 @@ There are two things you can do about this warning:
 ;; terraform
 (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 
+;; flycheck for json
+(add-hook 'json-mode-hook #'flycheck-mode t)
+
+
 ;; csharp / omnisharp
 (eval-after-load
     'company
