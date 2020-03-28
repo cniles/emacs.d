@@ -1,6 +1,11 @@
 ;; TODO: better loading of cask.el
 (require 'cask "c:/Users/Craig/.cask/cask.el")
-(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
+;;(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
+
+
+;; bell settings - turn off annoying sounds
+;;(setq visible-bell t) ;; show an alert instead of sound
+(setq ring-bell-function 'ignore)
 
 (cask-initialize)
 
@@ -25,34 +30,11 @@ There are two things you can do about this warning:
 		 (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
-(add-hook 'python-mode-hook 'jedi:setup)
-
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-(setq jedi:environment-root "jedi")
-(setq jedi:environment-virtualenv (list "python3" "-mvenv"))
 
 (require 'auto-org-md)
+
 (auto-org-md-mode)
-
-;; go - bad go mode I wrote
-;(load "go-fast")
-;(require 'go-fast)
-;(add-hook 'go-mode-hook
-;	  (lambda ()
-;	    (local-set-key (kbd "C-c r") 'go-run)))
-
-;; Just inserts a table in org mode
-;(load "hours")
-;(require 'hours)
-;(add-hook 'org-mode-hook
-;		  (lambda ()
-;			(local-set-key (kbd"C-c t") 'insert-timesheet)))
-
-(setq pianobar-username "niles.c@gmail.com")
-(setq pianobar-password "")
-(setq pianobar-station "0")
-(setq pianobar-program-command "/usr/local/bin/pianobar")
-(autoload 'pianobar "pianobar" nil t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -111,6 +93,25 @@ There are two things you can do about this warning:
 (setq-default js2-include-node-externs t)
 (setq-default js2-global-externs '("describe" "it" "afterEach" "beforeEach" "sinon" "fetch"))
 
+(add-hook 'elisp-mode
+	  (lambda ()
+	    (company-mode)
+	    (flycheck-mode)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Python stuff
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:environment-root "jedi")
+(setq jedi:environment-virtualenv (list "python3" "-mvenv"))
+(add-hook 'python-mode
+	  (lambda ()
+	    (company-mode)
+	    (flycheck-mode)))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; javascript
 (add-hook 'js2-mode-hook (lambda () (flycheck-mode 1)
 			   (setq flycheck-checker 'javascript-eslint)
 			   (setq-default flycheck-disabled-checkers
@@ -118,13 +119,18 @@ There are two things you can do about this warning:
 						 '(javascript-jshint)))))
 (add-hook 'js2-mode-hook (lambda () (npm-mode)))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; terraform
 (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
 
-;; flycheck for json
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; json
 (add-hook 'json-mode-hook #'flycheck-mode t)
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; csharp / omnisharp
 (eval-after-load
     'company
@@ -155,9 +161,6 @@ There are two things you can do about this warning:
 (add-hook 'csharp-mode-hook 'my-csharp-mode-setup t)
 (column-number-mode)
 
-;;(setq visible-bell t)
-(setq ring-bell-function 'ignore)
-
 ;; arduino
 ;(load "arduino-cli")
 ;(require 'arduino-cli-mode)
@@ -169,3 +172,9 @@ There are two things you can do about this warning:
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; magit setup
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch)
+(global-magit-file-mode)
