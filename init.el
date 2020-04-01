@@ -95,11 +95,20 @@ There are two things you can do about this warning:
 (setq-default js2-include-node-externs t)
 (setq-default js2-global-externs '("describe" "it" "afterEach" "beforeEach" "sinon" "fetch"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Elisp stuff
 (add-hook 'elisp-mode
 	  (lambda ()
 	    (company-mode)
 	    (flycheck-mode)))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Bash stuff
+(add-hook 'bash-mode
+	  (lambda ()
+	    (company-mode)
+	    (flycheck-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Python stuff
