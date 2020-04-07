@@ -85,8 +85,13 @@ There are two things you can do about this warning:
  ;; If there is more than one, they won't work right.
  )
 
-;; javascript
-;; everyone seems to use this.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; UUID util
+(load "uuid")
+(require 'custom-uuid)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Javascript
 (setq js-indent-level 2)
 (put 'downcase-region 'disabled nil)
 
