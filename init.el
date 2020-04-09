@@ -102,7 +102,7 @@ There are two things you can do about this warning:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Elisp stuff
-(add-hook 'elisp-mode
+(add-hook 'emacs-lisp-mode-hook
 	  (lambda ()
 	    (company-mode)
 	    (flycheck-mode)))
