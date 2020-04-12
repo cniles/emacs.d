@@ -1,6 +1,6 @@
 ;; TODO: better loading of cask.el
-(require 'cask "c:/Users/Craig/.cask/cask.el")
-;;(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
+;;(require 'cask "c:/Users/Craig/.cask/cask.el")
+(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
 
 
 ;; bell settings - turn off annoying sounds
@@ -56,6 +56,14 @@ There are two things you can do about this warning:
  '(org-agenda-files
    (quote
     ("~/workspace/refinitiv/notes.org" "~/workspace/omg/notes.org" "~/Documents/org/goals.org")))
+ '(sql-connection-alist
+   (quote
+    (("k2a-dev-esms"
+      (sql-product
+       (quote postgres))
+      (sql-user "postgres")
+      (sql-database "esms")
+      (sql-server "next-data-auroradev.cluster-c6f7hqbczcqo.us-east-1.rds.amazonaws.com")))))
  '(vc-annotate-background "#00000000cccc")
  '(vc-annotate-color-map
    (quote
@@ -164,10 +172,9 @@ There are two things you can do about this warning:
   (setq truncate-lines t)
   (setq tab-width 4)
   (setq evil-shift-width 4)
-
-					;csharp-mode README.md recommends this too
-					;(electric-pair-mode 1)       ;; Emacs 24
-					;(electric-pair-local-mode 1) ;; Emacs 25
+  ;; csharp-mode README.md recommends this too
+  ;; (electric-pair-mode 1)       ;; Emacs 24
+  ;; electric-pair-local-mode 1) ;; Emacs 25
 
   (local-set-key (kbd "C-c r r") 'omnisharp-run-code-action-refactoring)
   (local-set-key (kbd "C-c C-c") 'recompile)
@@ -177,11 +184,13 @@ There are two things you can do about this warning:
 (add-hook 'csharp-mode-hook 'my-csharp-mode-setup t)
 (column-number-mode)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; arduino
 ;(load "arduino-cli")
 ;(require 'arduino-cli-mode)
 ;(add-to-list 'auto-minor-mode-alist  '("\\.ino\\'" . arduino-cli-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; aws utilities
 (load "aws")
 (require 'aws)
@@ -194,3 +203,13 @@ There are two things you can do about this warning:
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch)
 (global-magit-file-mode)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Helm
+(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/helm")
+(require 'helm-config)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Nyan!
+(nyan-mode)
+(nyan-start-animation)

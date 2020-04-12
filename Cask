@@ -1,5 +1,6 @@
 (source melpa)
 (source gnu)
+(depends-on "nyan-mode")
 (depends-on "auto-minor-mode")
 (depends-on "vue-html-mode")
 (depends-on "python-black")
@@ -36,3 +37,10 @@
 
 (depends-on "exec-path-from-shell")
 (depends-on "org-pomodoro")
+
+;;; Needed for helm
+(depends-on "async")
+(depends-on "popup")
+
+;;; Helm apps
+(depends-on "helm-projectile")
