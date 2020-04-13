@@ -37,10 +37,12 @@
 
 (depends-on "exec-path-from-shell")
 (depends-on "org-pomodoro")
+(depends-on "sound-wav")
 
 ;;; Needed for helm
 (depends-on "async")
 (depends-on "popup")
 
-;;; Helm apps
+;;; Helm & helm app
+(depends-on "helm")
 (depends-on "helm-projectile")
