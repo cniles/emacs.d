@@ -1,7 +1,11 @@
-;; TODO: better loading of cask.el
-;;(require 'cask "c:/Users/Craig/.cask/cask.el")
-(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
+;;; init --- Emacs init file
+;;; Commentary:
 
+;;; Code:
+
+;; TODO: better loading of cask.el between mac/windows
+(require 'cask "c:/Users/Craig/.cask/cask.el")
+;;(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
 
 ;; bell settings - turn off annoying sounds
 ;;(setq visible-bell t) ;; show an alert instead of sound

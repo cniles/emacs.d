@@ -4,7 +4,7 @@
 (depends-on "auto-minor-mode")
 (depends-on "vue-html-mode")
 (depends-on "python-black")
-(depends-on "jedi")
+(depends-on "company-jedi")
 (depends-on "jinja2-mode")
 (depends-on "htmlize")
 (depends-on "cmake-mode")
@@ -29,6 +29,8 @@
 (depends-on "flycheck")
 (depends-on "csproj-mode")
 (depends-on "powershell")
+(depends-on "request")
+(depends-on "treemacs")
 
 ;;; (depends-on "arduino-mode")
 
