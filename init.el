@@ -210,10 +210,17 @@ There are two things you can do about this warning:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Helm
-(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/helm")
+;;(add-to-list 'load-path "/usr/local/share/emacs/site-lisp/helm")
 (require 'helm-config)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(helm-mode 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Nyan!
 (nyan-mode)
 (nyan-start-animation)
+
+(provide 'init)
+;;; init.el ends here
