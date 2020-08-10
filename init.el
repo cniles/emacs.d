@@ -129,11 +129,11 @@ There are two things you can do about this warning:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Python stuff
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:environment-root "jedi")
-(setq jedi:environment-virtualenv (list "python3" "-mvenv"))
-(add-hook 'python-mode
+;;(setq jedi:environment-root "jedi")
+(setq jedi:environment-virtualenv (list "python" "-mvenv"))
+(add-hook 'python-mode-hook
 	  (lambda ()
+	    (add-to-list 'company-backends 'company-jedi)
 	    (company-mode)
 	    (flycheck-mode)))
 
