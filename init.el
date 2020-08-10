@@ -7,6 +7,10 @@
 ;;(setq visible-bell t) ;; show an alert instead of sound
 (setq ring-bell-function 'ignore)
 
+;; Disable toolbar and menubar to free up some terrain
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
 (cask-initialize)
 
 (require 'package)
