@@ -164,6 +164,7 @@ There are two things you can do about this warning:
   '(add-to-list 'company-backends #'company-omnisharp))
 
 (defun my-csharp-mode-setup ()
+  "Setup for csharp."
   (omnisharp-mode)
   (company-mode)
   (flycheck-mode)
@@ -192,11 +193,6 @@ There are two things you can do about this warning:
 ;(load "arduino-cli")
 ;(require 'arduino-cli-mode)
 ;(add-to-list 'auto-minor-mode-alist  '("\\.ino\\'" . arduino-cli-mode))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; aws utilities
-(load "aws")
-(require 'aws)
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
