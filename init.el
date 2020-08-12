@@ -64,14 +64,9 @@ There are two things you can do about this warning:
  '(org-agenda-files
    (quote
     ("~/workspace/refinitiv/notes.org" "~/workspace/omg/notes.org" "~/Documents/org/goals.org")))
- '(sql-connection-alist
+ '(package-selected-packages
    (quote
-    (("k2a-dev-esms"
-      (sql-product
-       (quote postgres))
-      (sql-user "postgres")
-      (sql-database "esms")
-      (sql-server "next-data-auroradev.cluster-c6f7hqbczcqo.us-east-1.rds.amazonaws.com")))))
+    (axe yaml-mode yafolding vue-html-mode treemacs terraform-mode sound-wav request python-black powershell pianobar org-pomodoro omnisharp nyan-mode npm-mode markdown-mode magit json-mode js2-mode jinja2-mode jedi htmlize helm-projectile groovy-mode gradle-mode exec-path-from-shell csproj-mode company-jedi company-emacs-eclim cmake-mode auto-org-md auto-minor-mode arduino-mode)))
  '(vc-annotate-background "#00000000cccc")
  '(vc-annotate-color-map
    (quote
