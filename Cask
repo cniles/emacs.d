@@ -27,10 +27,15 @@
 (depends-on "auto-org-md")
 (depends-on "groovy-mode")
 (depends-on "flycheck")
+(depends-on "flycheck-package")
 (depends-on "csproj-mode")
 (depends-on "powershell")
 (depends-on "request")
+(depends-on "hmac")
 (depends-on "treemacs")
+(depends-on "package-lint")
+
+(depends-on "csv-mode")
 
 ;;; (depends-on "arduino-mode")
 

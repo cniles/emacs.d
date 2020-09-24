@@ -118,6 +118,8 @@ There are two things you can do about this warning:
 	    (company-mode)
 	    (flycheck-mode)))
 
+(eval-after-load 'flycheck
+  '(flycheck-package-setup))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Bash stuff
