@@ -4,16 +4,12 @@
 ;;; Code:
 
 ;; TODO: better loading of cask.el between mac/windows
-(require 'cask "c:/Users/Craig/.cask/cask.el")
-;;(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
+;;(require 'cask "c:/Users/Craig/.cask/cask.el")
+(require 'cask "/usr/local/Cellar/cask/0.8.4/cask.el")
 
 ;; bell settings - turn off annoying sounds
 ;;(setq visible-bell t) ;; show an alert instead of sound
 (setq ring-bell-function 'ignore)
-
-;; Disable toolbar and menubar to free up some terrain
-(tool-bar-mode -1)
-(menu-bar-mode -1)
 
 (cask-initialize)
 
@@ -36,7 +32,6 @@ There are two things you can do about this warning:
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives
 		 (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
-(package-initialize)
 
 ;; the list
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -218,6 +213,10 @@ There are two things you can do about this warning:
 ;; Nyan!
 (nyan-mode)
 (nyan-start-animation)
+
+;; Disable toolbar and menubar to free up some terrain
+(tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (provide 'init)
 ;;; init.el ends here
