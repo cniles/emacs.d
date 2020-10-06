@@ -34,6 +34,7 @@
 (depends-on "hmac")
 (depends-on "treemacs")
 (depends-on "package-lint")
+(depends-on "uuidgen")
 
 (depends-on "csv-mode")
 
