@@ -92,11 +92,6 @@ There are two things you can do about this warning:
  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; UUID util
-(load "uuid")
-(require 'uuid)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Javascript
 (setq js-indent-level 2)
 (put 'downcase-region 'disabled nil)
@@ -184,12 +179,6 @@ There are two things you can do about this warning:
 
 (add-hook 'csharp-mode-hook 'my-csharp-mode-setup t)
 (column-number-mode)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; arduino
-;(load "arduino-cli")
-;(require 'arduino-cli-mode)
-;(add-to-list 'auto-minor-mode-alist  '("\\.ino\\'" . arduino-cli-mode))
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
