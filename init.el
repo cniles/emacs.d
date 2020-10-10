@@ -34,7 +34,6 @@ There are two things you can do about this warning:
 		 (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 
 ;; the list
-(add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'auto-mode-alist '("\\.log\\'" . auto-revert-mode))
 
 (require 'auto-org-md)
